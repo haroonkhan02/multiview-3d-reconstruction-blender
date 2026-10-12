@@ -1,0 +1,2238 @@
+{
+ "pipes_gt": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 727321,
+  "mesh_vertices": 98265,
+  "mesh_triangles": 156911,
+  "kept_fraction": 0.19782916778343607,
+  "seconds": {
+   "plane_sweep": 106.55853191702045,
+   "fusion": 2.1659150409977883,
+   "poisson": 3.885626167000737,
+   "per_view_sweep": 7.611323708358603
+  },
+  "cloud": {
+   "points": 727321,
+   "points_in_scan_box": 725098,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007827392849145291,
+   "tau_0.02": {
+    "accuracy": 0.7600545029775285,
+    "completeness": 0.1821111069679296,
+    "f1": 0.2938217345912468
+   },
+   "tau_0.05": {
+    "accuracy": 0.9057010224824782,
+    "completeness": 0.279030846473921,
+    "f1": 0.4266256856552616
+   },
+   "tau_0.1": {
+    "accuracy": 0.949724037302544,
+    "completeness": 0.34972899937048013,
+    "f1": 0.5112089900444593
+   },
+   "tau_0.2": {
+    "accuracy": 0.989008382315218,
+    "completeness": 0.40515416656613357,
+    "f1": 0.5748266114096331
+   }
+  },
+  "mesh": {
+   "points": 727321,
+   "points_in_scan_box": 723966,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.008100191282504034,
+   "tau_0.02": {
+    "accuracy": 0.7125320802358122,
+    "completeness": 0.17007565205756486,
+    "f1": 0.2746052492496348
+   },
+   "tau_0.05": {
+    "accuracy": 0.8818950061190719,
+    "completeness": 0.23865164300300723,
+    "f1": 0.37564824691833815
+   },
+   "tau_0.1": {
+    "accuracy": 0.9419240682573491,
+    "completeness": 0.2951603740269312,
+    "f1": 0.449474022611497
+   },
+   "tau_0.2": {
+    "accuracy": 0.9836677413027684,
+    "completeness": 0.36016981682507027,
+    "f1": 0.5272771668851445
+   }
+  }
+ },
+ "terrace_gt": {
+  "scene": "terrace",
+  "poses": "gt",
+  "views": 23,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.01223836625556396,
+  "fused_points": 2111149,
+  "mesh_vertices": 105143,
+  "mesh_triangles": 158467,
+  "kept_fraction": 0.33850385431111835,
+  "seconds": {
+   "plane_sweep": 174.88281095898128,
+   "fusion": 5.115429166005924,
+   "poisson": 7.749271042004693,
+   "per_view_sweep": 7.603600476477447
+  },
+  "cloud": {
+   "points": 2111149,
+   "points_in_scan_box": 2104722,
+   "gt_points": 4904108,
+   "median_dist_to_gt_m": 0.01918444748175822,
+   "tau_0.02": {
+    "accuracy": 0.5149492427028368,
+    "completeness": 0.4871311969475387,
+    "f1": 0.5006541012866831
+   },
+   "tau_0.05": {
+    "accuracy": 0.7779549983323213,
+    "completeness": 0.6842041406918444,
+    "f1": 0.7280740063439756
+   },
+   "tau_0.1": {
+    "accuracy": 0.8805414681843968,
+    "completeness": 0.7913636893804133,
+    "f1": 0.8335742512210511
+   },
+   "tau_0.2": {
+    "accuracy": 0.9379105649107103,
+    "completeness": 0.8676848062889316,
+    "f1": 0.9014320260360374
+   }
+  },
+  "mesh": {
+   "points": 2111149,
+   "points_in_scan_box": 2103536,
+   "gt_points": 4904108,
+   "median_dist_to_gt_m": 0.019475696914736378,
+   "tau_0.02": {
+    "accuracy": 0.5075910276791079,
+    "completeness": 0.447084974474461,
+    "f1": 0.47542060582114526
+   },
+   "tau_0.05": {
+    "accuracy": 0.7379887960082452,
+    "completeness": 0.6134614082724116,
+    "f1": 0.669987905813304
+   },
+   "tau_0.1": {
+    "accuracy": 0.857603102585361,
+    "completeness": 0.7086626150973837,
+    "f1": 0.7760512798465974
+   },
+   "tau_0.2": {
+    "accuracy": 0.9399572909615048,
+    "completeness": 0.800879181290461,
+    "f1": 0.8648626538246055
+   }
+  }
+ },
+ "meadow_gt": {
+  "scene": "meadow",
+  "poses": "gt",
+  "views": 15,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.017443391451093346,
+  "fused_points": 443557,
+  "mesh_vertices": 33323,
+  "mesh_triangles": 51743,
+  "kept_fraction": 0.11074874921826142,
+  "seconds": {
+   "plane_sweep": 115.04435220800224,
+   "fusion": 2.2507160420063883,
+   "poisson": 3.725705624994589,
+   "per_view_sweep": 7.669623480533483
+  },
+  "cloud": {
+   "points": 443557,
+   "points_in_scan_box": 440379,
+   "gt_points": 3434092,
+   "median_dist_to_gt_m": 0.021464263223171288,
+   "tau_0.02": {
+    "accuracy": 0.4748273646109374,
+    "completeness": 0.27480277173704143,
+    "f1": 0.34812868257236035
+   },
+   "tau_0.05": {
+    "accuracy": 0.7799372812963379,
+    "completeness": 0.44502418688841183,
+    "f1": 0.5666969344712691
+   },
+   "tau_0.1": {
+    "accuracy": 0.8971340595259992,
+    "completeness": 0.5329603866174815,
+    "f1": 0.6686787946097875
+   },
+   "tau_0.2": {
+    "accuracy": 0.9374266257019522,
+    "completeness": 0.6157496654137397,
+    "f1": 0.7432770309818134
+   }
+  },
+  "mesh": {
+   "points": 443557,
+   "points_in_scan_box": 442388,
+   "gt_points": 3434092,
+   "median_dist_to_gt_m": 0.03008143956995043,
+   "tau_0.02": {
+    "accuracy": 0.3694652657847862,
+    "completeness": 0.22675746602012992,
+    "f1": 0.28103258390766755
+   },
+   "tau_0.05": {
+    "accuracy": 0.6644936119424577,
+    "completeness": 0.4130707622276864,
+    "f1": 0.5094505523011277
+   },
+   "tau_0.1": {
+    "accuracy": 0.8425771042614176,
+    "completeness": 0.4838609449018838,
+    "f1": 0.6147142025634561
+   },
+   "tau_0.2": {
+    "accuracy": 0.9232483702089569,
+    "completeness": 0.5446610050051076,
+    "f1": 0.6851341011620785
+   }
+  }
+ },
+ "relief_gt": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 3087035,
+  "mesh_vertices": 118705,
+  "mesh_triangles": 191963,
+  "kept_fraction": 0.5780471161411366,
+  "seconds": {
+   "plane_sweep": 236.65300720900996,
+   "fusion": 10.95577020800556,
+   "poisson": 8.105502999998862,
+   "per_view_sweep": 7.633967974484192
+  },
+  "cloud": {
+   "points": 3087035,
+   "points_in_scan_box": 3082291,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008891287723376103,
+   "tau_0.02": {
+    "accuracy": 0.8110755927976949,
+    "completeness": 0.4501558845814487,
+    "f1": 0.5789745300315114
+   },
+   "tau_0.05": {
+    "accuracy": 0.9575212074395312,
+    "completeness": 0.625982376268151,
+    "f1": 0.7570445775142568
+   },
+   "tau_0.1": {
+    "accuracy": 0.9855377055573273,
+    "completeness": 0.751532605379945,
+    "f1": 0.8527734483678221
+   },
+   "tau_0.2": {
+    "accuracy": 0.9937799513413886,
+    "completeness": 0.8552643231771918,
+    "f1": 0.9193338950116249
+   }
+  },
+  "mesh": {
+   "points": 3087035,
+   "points_in_scan_box": 3076282,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008756886409626501,
+   "tau_0.02": {
+    "accuracy": 0.741565630199052,
+    "completeness": 0.4053970833757007,
+    "f1": 0.5242167684377227
+   },
+   "tau_0.05": {
+    "accuracy": 0.9117369603956984,
+    "completeness": 0.5336429021264593,
+    "f1": 0.6732374929764299
+   },
+   "tau_0.1": {
+    "accuracy": 0.9787509727651756,
+    "completeness": 0.6559723229016673,
+    "f1": 0.7854950753425679
+   },
+   "tau_0.2": {
+    "accuracy": 0.9951951739144851,
+    "completeness": 0.7750009840162954,
+    "f1": 0.8714031330556681
+   }
+  }
+ },
+ "pipes_gt_v1_c0.3": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 1429459,
+  "mesh_vertices": 218174,
+  "mesh_triangles": 309214,
+  "kept_fraction": 0.341236766282498,
+  "seconds": {
+   "plane_sweep": 0.021364624990383163,
+   "fusion": 2.884753084013937,
+   "poisson": 9.97600875000353,
+   "per_view_sweep": 0.001526044642170226
+  },
+  "cloud": {
+   "points": 1429459,
+   "points_in_scan_box": 1373060,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.01120011252342085,
+   "tau_0.02": {
+    "accuracy": 0.6466782223646453,
+    "completeness": 0.3160628467020397,
+    "f1": 0.4246021415891777
+   },
+   "tau_0.05": {
+    "accuracy": 0.8151005782704325,
+    "completeness": 0.48884631160575825,
+    "f1": 0.6111581911331605
+   },
+   "tau_0.1": {
+    "accuracy": 0.8888657451240295,
+    "completeness": 0.6182170330092147,
+    "f1": 0.729239231802195
+   },
+   "tau_0.2": {
+    "accuracy": 0.9487939347151617,
+    "completeness": 0.7088306065105955,
+    "f1": 0.8114433196077153
+   }
+  },
+  "mesh": {
+   "points": 1429459,
+   "points_in_scan_box": 1380369,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.015786485981583196,
+   "tau_0.02": {
+    "accuracy": 0.5551906772754241,
+    "completeness": 0.281895490926798,
+    "f1": 0.37392984013738645
+   },
+   "tau_0.05": {
+    "accuracy": 0.7538694363608571,
+    "completeness": 0.41111815451971145,
+    "f1": 0.5320733265342803
+   },
+   "tau_0.1": {
+    "accuracy": 0.857314964332001,
+    "completeness": 0.5109606648782745,
+    "f1": 0.640301142304207
+   },
+   "tau_0.2": {
+    "accuracy": 0.9307880718851264,
+    "completeness": 0.6228430170452925,
+    "f1": 0.7462966659888547
+   }
+  }
+ },
+ "pipes_gt_v1_c0.5": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 1352948,
+  "mesh_vertices": 200420,
+  "mesh_triangles": 286139,
+  "kept_fraction": 0.32377311712677564,
+  "seconds": {
+   "plane_sweep": 0.017053207993740216,
+   "fusion": 2.655449750018306,
+   "poisson": 9.14562058300362,
+   "per_view_sweep": 0.0012180862852671584
+  },
+  "cloud": {
+   "points": 1352948,
+   "points_in_scan_box": 1310418,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.011175650384593337,
+   "tau_0.02": {
+    "accuracy": 0.6477566700091116,
+    "completeness": 0.30631954604378564,
+    "f1": 0.4159427219030984
+   },
+   "tau_0.05": {
+    "accuracy": 0.8199131880056593,
+    "completeness": 0.4758161275534489,
+    "f1": 0.6021750273953094
+   },
+   "tau_0.1": {
+    "accuracy": 0.8940643367230914,
+    "completeness": 0.6070556675433151,
+    "f1": 0.7231224968204276
+   },
+   "tau_0.2": {
+    "accuracy": 0.9534575990256544,
+    "completeness": 0.7014474570248496,
+    "f1": 0.8082643844398933
+   }
+  },
+  "mesh": {
+   "points": 1352948,
+   "points_in_scan_box": 1313222,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.015369583391752031,
+   "tau_0.02": {
+    "accuracy": 0.5608472901002268,
+    "completeness": 0.27396836607787184,
+    "f1": 0.3681157979030064
+   },
+   "tau_0.05": {
+    "accuracy": 0.7604038007282851,
+    "completeness": 0.4009372607769635,
+    "f1": 0.5250382115194207
+   },
+   "tau_0.1": {
+    "accuracy": 0.8635006114731554,
+    "completeness": 0.49967756299037297,
+    "f1": 0.6330381299589201
+   },
+   "tau_0.2": {
+    "accuracy": 0.9345122149948752,
+    "completeness": 0.6125272261862721,
+    "f1": 0.7400123870804072
+   }
+  }
+ },
+ "pipes_gt_v1_c0.7": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 1109103,
+  "mesh_vertices": 154313,
+  "mesh_triangles": 221060,
+  "kept_fraction": 0.2664831814526937,
+  "seconds": {
+   "plane_sweep": 0.015794915991136804,
+   "fusion": 1.955786917009391,
+   "poisson": 6.883200625015888,
+   "per_view_sweep": 0.0011282082850812003
+  },
+  "cloud": {
+   "points": 1109103,
+   "points_in_scan_box": 1084140,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.011281172036821871,
+   "tau_0.02": {
+    "accuracy": 0.6451436161381371,
+    "completeness": 0.26222354316598045,
+    "f1": 0.37288509538828274
+   },
+   "tau_0.05": {
+    "accuracy": 0.8286494364196506,
+    "completeness": 0.42131659585482,
+    "f1": 0.5586131953907062
+   },
+   "tau_0.1": {
+    "accuracy": 0.9031868577858948,
+    "completeness": 0.5517972024750879,
+    "f1": 0.6850604003855923
+   },
+   "tau_0.2": {
+    "accuracy": 0.961857324699762,
+    "completeness": 0.668820999203778,
+    "f1": 0.789009539854804
+   }
+  },
+  "mesh": {
+   "points": 1109103,
+   "points_in_scan_box": 1082262,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.015111665404806955,
+   "tau_0.02": {
+    "accuracy": 0.5636980694138758,
+    "completeness": 0.23397740308793757,
+    "f1": 0.330692405505405
+   },
+   "tau_0.05": {
+    "accuracy": 0.7713160029641621,
+    "completeness": 0.3552433302698162,
+    "f1": 0.48644551156806853
+   },
+   "tau_0.1": {
+    "accuracy": 0.8731942912159902,
+    "completeness": 0.4488794765553199,
+    "f1": 0.5929457280328213
+   },
+   "tau_0.2": {
+    "accuracy": 0.9420491526081485,
+    "completeness": 0.5518147500674485,
+    "f1": 0.6959624859622882
+   }
+  }
+ },
+ "pipes_gt_v2_c0.3": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 750956,
+  "mesh_vertices": 101684,
+  "mesh_triangles": 162835,
+  "kept_fraction": 0.20456965290806753,
+  "seconds": {
+   "plane_sweep": 0.015076875017257407,
+   "fusion": 2.3371112500026356,
+   "poisson": 3.962342541984981,
+   "per_view_sweep": 0.0010769196440898149
+  },
+  "cloud": {
+   "points": 750956,
+   "points_in_scan_box": 748654,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007768229761299535,
+   "tau_0.02": {
+    "accuracy": 0.7634848675088893,
+    "completeness": 0.18744667177009144,
+    "f1": 0.3009947434699285
+   },
+   "tau_0.05": {
+    "accuracy": 0.9062156884221549,
+    "completeness": 0.2844706001057242,
+    "f1": 0.43301367151778763
+   },
+   "tau_0.1": {
+    "accuracy": 0.9499421628682942,
+    "completeness": 0.3554429341329186,
+    "f1": 0.517318958830068
+   },
+   "tau_0.2": {
+    "accuracy": 0.9889227867613076,
+    "completeness": 0.41207778847693477,
+    "f1": 0.5817458210161672
+   }
+  },
+  "mesh": {
+   "points": 750956,
+   "points_in_scan_box": 747688,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.00802202160006206,
+   "tau_0.02": {
+    "accuracy": 0.7182113394891987,
+    "completeness": 0.17569855868463247,
+    "f1": 0.2823297905907573
+   },
+   "tau_0.05": {
+    "accuracy": 0.8816538449192711,
+    "completeness": 0.24389617966979818,
+    "f1": 0.3820923101938639
+   },
+   "tau_0.1": {
+    "accuracy": 0.9422165395191577,
+    "completeness": 0.2998773861983799,
+    "f1": 0.4549566296939473
+   },
+   "tau_0.2": {
+    "accuracy": 0.9837552562031222,
+    "completeness": 0.36297523815373006,
+    "f1": 0.5302899130918386
+   }
+  }
+ },
+ "pipes_gt_v2_c0.5": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 727321,
+  "mesh_vertices": 98265,
+  "mesh_triangles": 156911,
+  "kept_fraction": 0.19782916778343607,
+  "seconds": {
+   "plane_sweep": 0.01776058302493766,
+   "fusion": 2.004976374999387,
+   "poisson": 3.5856561249820516,
+   "per_view_sweep": 0.0012686130732098328
+  },
+  "cloud": {
+   "points": 727321,
+   "points_in_scan_box": 725098,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007827392849145291,
+   "tau_0.02": {
+    "accuracy": 0.7600545029775285,
+    "completeness": 0.1821111069679296,
+    "f1": 0.2938217345912468
+   },
+   "tau_0.05": {
+    "accuracy": 0.9057010224824782,
+    "completeness": 0.279030846473921,
+    "f1": 0.4266256856552616
+   },
+   "tau_0.1": {
+    "accuracy": 0.949724037302544,
+    "completeness": 0.34972899937048013,
+    "f1": 0.5112089900444593
+   },
+   "tau_0.2": {
+    "accuracy": 0.989008382315218,
+    "completeness": 0.40515416656613357,
+    "f1": 0.5748266114096331
+   }
+  },
+  "mesh": {
+   "points": 727321,
+   "points_in_scan_box": 724015,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.008083151587187557,
+   "tau_0.02": {
+    "accuracy": 0.7131330151999613,
+    "completeness": 0.17011403741585382,
+    "f1": 0.2746998952805442
+   },
+   "tau_0.05": {
+    "accuracy": 0.8822786820715041,
+    "completeness": 0.23861325764471827,
+    "f1": 0.3756354792467662
+   },
+   "tau_0.1": {
+    "accuracy": 0.942476329910292,
+    "completeness": 0.29535010736933076,
+    "f1": 0.4497568913519277
+   },
+   "tau_0.2": {
+    "accuracy": 0.9837033763112643,
+    "completeness": 0.36124899375525055,
+    "f1": 0.5284378283648994
+   }
+  }
+ },
+ "pipes_gt_v2_c0.7": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 625991,
+  "mesh_vertices": 85768,
+  "mesh_triangles": 135220,
+  "kept_fraction": 0.1692773385151434,
+  "seconds": {
+   "plane_sweep": 0.019039583014091477,
+   "fusion": 1.5106912079791073,
+   "poisson": 3.2565324590250384,
+   "per_view_sweep": 0.0013599702152922483
+  },
+  "cloud": {
+   "points": 625991,
+   "points_in_scan_box": 624348,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007991285786187099,
+   "tau_0.02": {
+    "accuracy": 0.7505029246509959,
+    "completeness": 0.15812793510900344,
+    "f1": 0.26121824169537067
+   },
+   "tau_0.05": {
+    "accuracy": 0.9056327560911543,
+    "completeness": 0.25202619855539443,
+    "f1": 0.39431851650054317
+   },
+   "tau_0.1": {
+    "accuracy": 0.949593816269132,
+    "completeness": 0.3279118584435724,
+    "f1": 0.48748601156603333
+   },
+   "tau_0.2": {
+    "accuracy": 0.9898598217660664,
+    "completeness": 0.3898515693031193,
+    "f1": 0.5593900396902008
+   }
+  },
+  "mesh": {
+   "points": 625991,
+   "points_in_scan_box": 623389,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.008409142753420147,
+   "tau_0.02": {
+    "accuracy": 0.7033425357200721,
+    "completeness": 0.1482859292437207,
+    "f1": 0.24493263383421515
+   },
+   "tau_0.05": {
+    "accuracy": 0.8803924997072454,
+    "completeness": 0.2153243124085606,
+    "f1": 0.34601989775635733
+   },
+   "tau_0.1": {
+    "accuracy": 0.9420714834557555,
+    "completeness": 0.27303176333562185,
+    "f1": 0.4233639223585939
+   },
+   "tau_0.2": {
+    "accuracy": 0.9840629205840976,
+    "completeness": 0.3447981259171359,
+    "f1": 0.5106674647365025
+   }
+  }
+ },
+ "pipes_gt_v3_c0.3": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 398579,
+  "mesh_vertices": 547563,
+  "mesh_triangles": 1044788,
+  "kept_fraction": 0.1166084829804342,
+  "seconds": {
+   "plane_sweep": 0.017997457995079458,
+   "fusion": 1.8937579170160461,
+   "poisson": 7.830845415999647,
+   "per_view_sweep": 0.001285532713934247
+  },
+  "cloud": {
+   "points": 398579,
+   "points_in_scan_box": 398526,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.006646925253817338,
+   "tau_0.02": {
+    "accuracy": 0.8205989069721925,
+    "completeness": 0.10433469400289097,
+    "f1": 0.18513098836022696
+   },
+   "tau_0.05": {
+    "accuracy": 0.9320671675122828,
+    "completeness": 0.1426575389940404,
+    "f1": 0.24744273112821746
+   },
+   "tau_0.1": {
+    "accuracy": 0.9615432870126416,
+    "completeness": 0.16561417669986817,
+    "f1": 0.2825606979798173
+   },
+   "tau_0.2": {
+    "accuracy": 0.9941358907574411,
+    "completeness": 0.1904911790446652,
+    "f1": 0.31971938306734565
+   }
+  },
+  "mesh": {
+   "points": 398579,
+   "points_in_scan_box": 398579,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.006986416546594475,
+   "tau_0.02": {
+    "accuracy": 0.7538355006159381,
+    "completeness": 0.10733752574560816,
+    "f1": 0.18791772379862304
+   },
+   "tau_0.05": {
+    "accuracy": 0.9104794783468271,
+    "completeness": 0.13687451058668182,
+    "f1": 0.23797385471331967
+   },
+   "tau_0.1": {
+    "accuracy": 0.9519116661941547,
+    "completeness": 0.15913253477165099,
+    "f1": 0.27268062996684256
+   },
+   "tau_0.2": {
+    "accuracy": 0.9919162825939148,
+    "completeness": 0.18799064713327177,
+    "f1": 0.31607744504047347
+   }
+  }
+ },
+ "pipes_gt_v3_c0.5": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 388407,
+  "mesh_vertices": 531593,
+  "mesh_triangles": 1013740,
+  "kept_fraction": 0.11361129723934602,
+  "seconds": {
+   "plane_sweep": 0.021632666001096368,
+   "fusion": 1.7015458749956451,
+   "poisson": 7.712046417000238,
+   "per_view_sweep": 0.0015451904286497406
+  },
+  "cloud": {
+   "points": 388407,
+   "points_in_scan_box": 388357,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.00667008818097945,
+   "tau_0.02": {
+    "accuracy": 0.8182651529391771,
+    "completeness": 0.1015819154513131,
+    "f1": 0.18072774146699147
+   },
+   "tau_0.05": {
+    "accuracy": 0.9315629691237701,
+    "completeness": 0.1404070602737863,
+    "f1": 0.24403297548924302
+   },
+   "tau_0.1": {
+    "accuracy": 0.9610307011332356,
+    "completeness": 0.16380129106410793,
+    "f1": 0.2798961457174682
+   },
+   "tau_0.2": {
+    "accuracy": 0.9940750392036194,
+    "completeness": 0.18922336549660784,
+    "f1": 0.31792863698136126
+   }
+  },
+  "mesh": {
+   "points": 388407,
+   "points_in_scan_box": 388407,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007049806427509785,
+   "tau_0.02": {
+    "accuracy": 0.7512145764623192,
+    "completeness": 0.10452113717172293,
+    "f1": 0.18350946569326934
+   },
+   "tau_0.05": {
+    "accuracy": 0.9097827794040787,
+    "completeness": 0.13417218136314085,
+    "f1": 0.23385595100684609
+   },
+   "tau_0.1": {
+    "accuracy": 0.9515585455462955,
+    "completeness": 0.15692263485873092,
+    "f1": 0.2694156235199342
+   },
+   "tau_0.2": {
+    "accuracy": 0.9918873758711867,
+    "completeness": 0.1853585082791734,
+    "f1": 0.31234726211018915
+   }
+  }
+ },
+ "pipes_gt_v3_c0.7": {
+  "scene": "pipes",
+  "poses": "gt",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.004906259229333904,
+  "fused_points": 338852,
+  "mesh_vertices": 473988,
+  "mesh_triangles": 902334,
+  "kept_fraction": 0.09877244706513,
+  "seconds": {
+   "plane_sweep": 0.0180065410095267,
+   "fusion": 1.2515425419842359,
+   "poisson": 6.9787159170082305,
+   "per_view_sweep": 0.0012861815006804786
+  },
+  "cloud": {
+   "points": 338852,
+   "points_in_scan_box": 338818,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.006698493536429206,
+   "tau_0.02": {
+    "accuracy": 0.8135223040098224,
+    "completeness": 0.08957716882757955,
+    "f1": 0.16138427042224557
+   },
+   "tau_0.05": {
+    "accuracy": 0.9320343075043238,
+    "completeness": 0.12913273218206506,
+    "f1": 0.2268373066902298
+   },
+   "tau_0.1": {
+    "accuracy": 0.9604271319705565,
+    "completeness": 0.1571979127138887,
+    "f1": 0.27017494136807846
+   },
+   "tau_0.2": {
+    "accuracy": 0.9944335897148322,
+    "completeness": 0.18641684744342546,
+    "f1": 0.31397570590329266
+   }
+  },
+  "mesh": {
+   "points": 338852,
+   "points_in_scan_box": 338852,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.007302831200942966,
+   "tau_0.02": {
+    "accuracy": 0.7404796194208682,
+    "completeness": 0.0920404121052066,
+    "f1": 0.16372951219461113
+   },
+   "tau_0.05": {
+    "accuracy": 0.9091166645024966,
+    "completeness": 0.12222556113910196,
+    "f1": 0.21548093677750899
+   },
+   "tau_0.1": {
+    "accuracy": 0.9496800963252393,
+    "completeness": 0.14734055270529037,
+    "f1": 0.25510256422143257
+   },
+   "tau_0.2": {
+    "accuracy": 0.9919581410173173,
+    "completeness": 0.17973121475401566,
+    "f1": 0.30432271282828294
+   }
+  }
+ },
+ "relief_gt_v1_c0.3": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 4057805,
+  "mesh_vertices": 94270,
+  "mesh_triangles": 141022,
+  "kept_fraction": 0.6941637414513103,
+  "seconds": {
+   "plane_sweep": 0.03820579199236818,
+   "fusion": 10.613203666987829,
+   "poisson": 10.435201625019545,
+   "per_view_sweep": 0.0012324449029796187
+  },
+  "cloud": {
+   "points": 4057805,
+   "points_in_scan_box": 4000889,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.01010319092492205,
+   "tau_0.02": {
+    "accuracy": 0.7490875152997246,
+    "completeness": 0.55811559239421,
+    "f1": 0.639651818291883
+   },
+   "tau_0.05": {
+    "accuracy": 0.908991226699866,
+    "completeness": 0.7634574478553365,
+    "f1": 0.8298922802444008
+   },
+   "tau_0.1": {
+    "accuracy": 0.9489788394529316,
+    "completeness": 0.8712851334818105,
+    "f1": 0.908473899498316
+   },
+   "tau_0.2": {
+    "accuracy": 0.9662889922714677,
+    "completeness": 0.9383433839664385,
+    "f1": 0.952111172958736
+   }
+  },
+  "mesh": {
+   "points": 4057805,
+   "points_in_scan_box": 4008708,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.011366194438060005,
+   "tau_0.02": {
+    "accuracy": 0.6720312379948852,
+    "completeness": 0.48135002115635034,
+    "f1": 0.560928570773925
+   },
+   "tau_0.05": {
+    "accuracy": 0.8791722919204891,
+    "completeness": 0.631647030074818,
+    "f1": 0.7351329957605253
+   },
+   "tau_0.1": {
+    "accuracy": 0.9599913488335893,
+    "completeness": 0.7563177946226789,
+    "f1": 0.8460696519329255
+   },
+   "tau_0.2": {
+    "accuracy": 0.9834714825824181,
+    "completeness": 0.8643857442279245,
+    "f1": 0.9200913545321159
+   }
+  }
+ },
+ "relief_gt_v1_c0.5": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 3882606,
+  "mesh_vertices": 88661,
+  "mesh_triangles": 134243,
+  "kept_fraction": 0.6690756067300128,
+  "seconds": {
+   "plane_sweep": 0.026044541998999193,
+   "fusion": 9.672687749989564,
+   "poisson": 8.890781416994287,
+   "per_view_sweep": 0.0008401465160967482
+  },
+  "cloud": {
+   "points": 3882606,
+   "points_in_scan_box": 3848498,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.010064329890305295,
+   "tau_0.02": {
+    "accuracy": 0.7499159412321378,
+    "completeness": 0.5398231394711897,
+    "f1": 0.6277579454515173
+   },
+   "tau_0.05": {
+    "accuracy": 0.9127142589134775,
+    "completeness": 0.7521896412604593,
+    "f1": 0.8247133193858343
+   },
+   "tau_0.1": {
+    "accuracy": 0.9537268825396298,
+    "completeness": 0.8647338399923903,
+    "f1": 0.9070527608582357
+   },
+   "tau_0.2": {
+    "accuracy": 0.9712441061421885,
+    "completeness": 0.9328999288228214,
+    "f1": 0.951685944814865
+   }
+  },
+  "mesh": {
+   "points": 3882606,
+   "points_in_scan_box": 3851926,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.01089810258124859,
+   "tau_0.02": {
+    "accuracy": 0.6823030868194249,
+    "completeness": 0.4624583433101652,
+    "f1": 0.5512707658751281
+   },
+   "tau_0.05": {
+    "accuracy": 0.8794603011584334,
+    "completeness": 0.6089072335037868,
+    "f1": 0.7195934155824233
+   },
+   "tau_0.1": {
+    "accuracy": 0.9614416268640675,
+    "completeness": 0.7397678705559364,
+    "f1": 0.8361623022299302
+   },
+   "tau_0.2": {
+    "accuracy": 0.9848153884576183,
+    "completeness": 0.8564867584207194,
+    "f1": 0.916179173671098
+   }
+  }
+ },
+ "relief_gt_v1_c0.7": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 1
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 3412040,
+  "mesh_vertices": 79384,
+  "mesh_triangles": 119977,
+  "kept_fraction": 0.5822315862736791,
+  "seconds": {
+   "plane_sweep": 0.02512908400967717,
+   "fusion": 8.033312499988824,
+   "poisson": 7.613334333000239,
+   "per_view_sweep": 0.0008106156132153926
+  },
+  "cloud": {
+   "points": 3412040,
+   "points_in_scan_box": 3404519,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.010133012721950992,
+   "tau_0.02": {
+    "accuracy": 0.7470144828094659,
+    "completeness": 0.4866452588454865,
+    "f1": 0.5893538454297997
+   },
+   "tau_0.05": {
+    "accuracy": 0.9146481485343451,
+    "completeness": 0.6944533051467332,
+    "f1": 0.7894846261470198
+   },
+   "tau_0.1": {
+    "accuracy": 0.9577955065017996,
+    "completeness": 0.8220205626605177,
+    "f1": 0.8847291748960172
+   },
+   "tau_0.2": {
+    "accuracy": 0.9757301985978049,
+    "completeness": 0.9066881947565052,
+    "f1": 0.9399430599056353
+   }
+  },
+  "mesh": {
+   "points": 3412040,
+   "points_in_scan_box": 3409795,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.010651916119903845,
+   "tau_0.02": {
+    "accuracy": 0.6868691519578156,
+    "completeness": 0.411156858757581,
+    "f1": 0.5143975828267674
+   },
+   "tau_0.05": {
+    "accuracy": 0.8802593704313603,
+    "completeness": 0.5485564890954594,
+    "f1": 0.6759051371351924
+   },
+   "tau_0.1": {
+    "accuracy": 0.9630071602545021,
+    "completeness": 0.6849073220652534,
+    "f1": 0.80049136327888
+   },
+   "tau_0.2": {
+    "accuracy": 0.9857466504584587,
+    "completeness": 0.8150360969977662,
+    "f1": 0.8922998665476873
+   }
+  }
+ },
+ "relief_gt_v2_c0.3": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 3176298,
+  "mesh_vertices": 114636,
+  "mesh_triangles": 185328,
+  "kept_fraction": 0.5941975579495249,
+  "seconds": {
+   "plane_sweep": 0.02697495900793001,
+   "fusion": 9.535153749980964,
+   "poisson": 6.923342499998398,
+   "per_view_sweep": 0.0008701599679977423
+  },
+  "cloud": {
+   "points": 3176298,
+   "points_in_scan_box": 3170361,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008853751992481371,
+   "tau_0.02": {
+    "accuracy": 0.8136669609549196,
+    "completeness": 0.46610637872163163,
+    "f1": 0.5926914538663315
+   },
+   "tau_0.05": {
+    "accuracy": 0.9581180187366676,
+    "completeness": 0.6430823244432928,
+    "f1": 0.7696085817175334
+   },
+   "tau_0.1": {
+    "accuracy": 0.9855344549090782,
+    "completeness": 0.7645665162215086,
+    "f1": 0.8611007675966522
+   },
+   "tau_0.2": {
+    "accuracy": 0.9935966282704083,
+    "completeness": 0.8631259983665329,
+    "f1": 0.9237772723251353
+   }
+  },
+  "mesh": {
+   "points": 3176298,
+   "points_in_scan_box": 3165233,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008957597206133186,
+   "tau_0.02": {
+    "accuracy": 0.7408727888278683,
+    "completeness": 0.4190322691743775,
+    "f1": 0.5353017537604186
+   },
+   "tau_0.05": {
+    "accuracy": 0.9136148902782196,
+    "completeness": 0.5501056997503878,
+    "f1": 0.6867222637198143
+   },
+   "tau_0.1": {
+    "accuracy": 0.9795850731999824,
+    "completeness": 0.6693750348505771,
+    "f1": 0.7953009770352047
+   },
+   "tau_0.2": {
+    "accuracy": 0.9949346540997139,
+    "completeness": 0.785348530371663,
+    "f1": 0.8778046944762476
+   }
+  }
+ },
+ "relief_gt_v2_c0.5": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 3087035,
+  "mesh_vertices": 118705,
+  "mesh_triangles": 191963,
+  "kept_fraction": 0.5780471161411366,
+  "seconds": {
+   "plane_sweep": 0.025769125000806525,
+   "fusion": 9.07069362499169,
+   "poisson": 7.029524625017075,
+   "per_view_sweep": 0.0008312620968002105
+  },
+  "cloud": {
+   "points": 3087035,
+   "points_in_scan_box": 3082291,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008891287723376103,
+   "tau_0.02": {
+    "accuracy": 0.8110755927976949,
+    "completeness": 0.4501558845814487,
+    "f1": 0.5789745300315114
+   },
+   "tau_0.05": {
+    "accuracy": 0.9575212074395312,
+    "completeness": 0.625982376268151,
+    "f1": 0.7570445775142568
+   },
+   "tau_0.1": {
+    "accuracy": 0.9855377055573273,
+    "completeness": 0.751532605379945,
+    "f1": 0.8527734483678221
+   },
+   "tau_0.2": {
+    "accuracy": 0.9937799513413886,
+    "completeness": 0.8552643231771918,
+    "f1": 0.9193338950116249
+   }
+  },
+  "mesh": {
+   "points": 3087035,
+   "points_in_scan_box": 3076362,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.008756667029810553,
+   "tau_0.02": {
+    "accuracy": 0.7413883671687532,
+    "completeness": 0.40538519317879906,
+    "f1": 0.524162531884904
+   },
+   "tau_0.05": {
+    "accuracy": 0.911892033512311,
+    "completeness": 0.5336055915085954,
+    "f1": 0.6732500690580865
+   },
+   "tau_0.1": {
+    "accuracy": 0.9787199945910137,
+    "completeness": 0.6559245571106658,
+    "f1": 0.7854508532991726
+   },
+   "tau_0.2": {
+    "accuracy": 0.9951657184687628,
+    "completeness": 0.7751010256729851,
+    "f1": 0.8714550749510863
+   }
+  }
+ },
+ "relief_gt_v2_c0.7": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 2751468,
+  "mesh_vertices": 119494,
+  "mesh_triangles": 192608,
+  "kept_fraction": 0.5071480663317799,
+  "seconds": {
+   "plane_sweep": 0.02714137500151992,
+   "fusion": 7.756963749998249,
+   "poisson": 6.966613333992427,
+   "per_view_sweep": 0.0008755282258554812
+  },
+  "cloud": {
+   "points": 2751468,
+   "points_in_scan_box": 2750631,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.009023906099968454,
+   "tau_0.02": {
+    "accuracy": 0.804797153816706,
+    "completeness": 0.41081901316285796,
+    "f1": 0.5439644215143351
+   },
+   "tau_0.05": {
+    "accuracy": 0.9555949162210416,
+    "completeness": 0.5793154034630813,
+    "f1": 0.7213331584763707
+   },
+   "tau_0.1": {
+    "accuracy": 0.9853237311729564,
+    "completeness": 0.7089249047964234,
+    "f1": 0.8245785388114301
+   },
+   "tau_0.2": {
+    "accuracy": 0.9941337096833418,
+    "completeness": 0.8213622967596343,
+    "f1": 0.8995271200529985
+   }
+  },
+  "mesh": {
+   "points": 2751468,
+   "points_in_scan_box": 2751118,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.00883285367460334,
+   "tau_0.02": {
+    "accuracy": 0.7345817227759769,
+    "completeness": 0.37023469608656717,
+    "f1": 0.49233091804105
+   },
+   "tau_0.05": {
+    "accuracy": 0.9065728914572185,
+    "completeness": 0.49334230974864945,
+    "f1": 0.6389683658578178
+   },
+   "tau_0.1": {
+    "accuracy": 0.9770446051387108,
+    "completeness": 0.6182305828984528,
+    "f1": 0.7572848374779864
+   },
+   "tau_0.2": {
+    "accuracy": 0.9951746889809888,
+    "completeness": 0.7474952685216467,
+    "f1": 0.8537340856347039
+   }
+  }
+ },
+ "relief_gt_v3_c0.3": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.3,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 2267632,
+  "mesh_vertices": 99047,
+  "mesh_triangles": 170052,
+  "kept_fraction": 0.4660224384191733,
+  "seconds": {
+   "plane_sweep": 0.028243583015864715,
+   "fusion": 8.430960666999454,
+   "poisson": 4.950256207986968,
+   "per_view_sweep": 0.0009110833230924102
+  },
+  "cloud": {
+   "points": 2267632,
+   "points_in_scan_box": 2267577,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.007955456521621926,
+   "tau_0.02": {
+    "accuracy": 0.8671418875742698,
+    "completeness": 0.3407525428621098,
+    "f1": 0.48924938432977616
+   },
+   "tau_0.05": {
+    "accuracy": 0.9842982178774966,
+    "completeness": 0.4381859413591889,
+    "f1": 0.6064118723265985
+   },
+   "tau_0.1": {
+    "accuracy": 0.997114982203471,
+    "completeness": 0.5132790949018116,
+    "f1": 0.6777016453339263
+   },
+   "tau_0.2": {
+    "accuracy": 0.9991440202471625,
+    "completeness": 0.5944100084297396,
+    "f1": 0.7453794409352343
+   }
+  },
+  "mesh": {
+   "points": 2267632,
+   "points_in_scan_box": 2267632,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.00654138669961404,
+   "tau_0.02": {
+    "accuracy": 0.8487982177002265,
+    "completeness": 0.3226901037481181,
+    "f1": 0.4676082209548191
+   },
+   "tau_0.05": {
+    "accuracy": 0.965969786984837,
+    "completeness": 0.4011112824028366,
+    "f1": 0.5668447741631444
+   },
+   "tau_0.1": {
+    "accuracy": 0.9947160738603089,
+    "completeness": 0.4704672109370131,
+    "f1": 0.6388023966680879
+   },
+   "tau_0.2": {
+    "accuracy": 0.9986730651181497,
+    "completeness": 0.5491290635772929,
+    "f1": 0.7086182334306658
+   }
+  }
+ },
+ "relief_gt_v3_c0.5": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 2225424,
+  "mesh_vertices": 103357,
+  "mesh_triangles": 178140,
+  "kept_fraction": 0.4573744174786661,
+  "seconds": {
+   "plane_sweep": 0.02660949999699369,
+   "fusion": 7.78987545898417,
+   "poisson": 4.846015290997457,
+   "per_view_sweep": 0.0008583709676449578
+  },
+  "cloud": {
+   "points": 2225424,
+   "points_in_scan_box": 2225376,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.007973219399134772,
+   "tau_0.02": {
+    "accuracy": 0.8658397502264786,
+    "completeness": 0.3336893558957336,
+    "f1": 0.48172488201809455
+   },
+   "tau_0.05": {
+    "accuracy": 0.9841114490315345,
+    "completeness": 0.42716147379400604,
+    "f1": 0.595738060508132
+   },
+   "tau_0.1": {
+    "accuracy": 0.9970912780581799,
+    "completeness": 0.5046810475181469,
+    "f1": 0.6701589343624306
+   },
+   "tau_0.2": {
+    "accuracy": 0.99914351552277,
+    "completeness": 0.5884927904406096,
+    "f1": 0.7407096364476791
+   }
+  },
+  "mesh": {
+   "points": 2225424,
+   "points_in_scan_box": 2225424,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.006589184452186632,
+   "tau_0.02": {
+    "accuracy": 0.8479426841806326,
+    "completeness": 0.317182277538516,
+    "f1": 0.46167132389592763
+   },
+   "tau_0.05": {
+    "accuracy": 0.9637601643551971,
+    "completeness": 0.3931309102478737,
+    "f1": 0.5584588442877528
+   },
+   "tau_0.1": {
+    "accuracy": 0.9944109526993508,
+    "completeness": 0.46117481705497043,
+    "f1": 0.6301205998544291
+   },
+   "tau_0.2": {
+    "accuracy": 0.9986568851598616,
+    "completeness": 0.540477100300781,
+    "f1": 0.7013699685476982
+   }
+  }
+ },
+ "relief_gt_v3_c0.7": {
+  "scene": "relief",
+  "poses": "gt",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.7,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 3
+  },
+  "voxel_m": 0.007913454932753647,
+  "fused_points": 2004014,
+  "mesh_vertices": 100124,
+  "mesh_triangles": 171546,
+  "kept_fraction": 0.4068668673969618,
+  "seconds": {
+   "plane_sweep": 0.02606595802353695,
+   "fusion": 6.97607862498262,
+   "poisson": 4.652916624996578,
+   "per_view_sweep": 0.0008408373555979661
+  },
+  "cloud": {
+   "points": 2004014,
+   "points_in_scan_box": 2003976,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.00803568811206061,
+   "tau_0.02": {
+    "accuracy": 0.8630088384292027,
+    "completeness": 0.30916971985056074,
+    "f1": 0.4552483901382429
+   },
+   "tau_0.05": {
+    "accuracy": 0.9836195643061594,
+    "completeness": 0.3994441947958658,
+    "f1": 0.5681605381733538
+   },
+   "tau_0.1": {
+    "accuracy": 0.9970149343105905,
+    "completeness": 0.47711711105935917,
+    "f1": 0.6453870759209028
+   },
+   "tau_0.2": {
+    "accuracy": 0.999156177519092,
+    "completeness": 0.5675197131264493,
+    "f1": 0.7238776451720443
+   }
+  },
+  "mesh": {
+   "points": 2004014,
+   "points_in_scan_box": 2004014,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.006741730556880533,
+   "tau_0.02": {
+    "accuracy": 0.8452336161324222,
+    "completeness": 0.2951604028562713,
+    "f1": 0.437532099416916
+   },
+   "tau_0.05": {
+    "accuracy": 0.9629189217240998,
+    "completeness": 0.3696508464180167,
+    "f1": 0.5342216264496203
+   },
+   "tau_0.1": {
+    "accuracy": 0.9937809815699891,
+    "completeness": 0.4357638262489627,
+    "f1": 0.6058625103792249
+   },
+   "tau_0.2": {
+    "accuracy": 0.9985269563985082,
+    "completeness": 0.5168404138772538,
+    "f1": 0.6811273563567427
+   }
+  }
+ },
+ "pipes_ours": {
+  "scene": "pipes",
+  "poses": "ours",
+  "views": 14,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.005097768033628859,
+  "fused_points": 752274,
+  "mesh_vertices": 83119,
+  "mesh_triangles": 126402,
+  "kept_fraction": 0.2069049852586438,
+  "seconds": {
+   "plane_sweep": 109.44792074998259,
+   "fusion": 2.008344041998498,
+   "poisson": 3.5336227499938104,
+   "per_view_sweep": 7.817708624998756
+  },
+  "cloud": {
+   "points": 752274,
+   "points_in_scan_box": 745803,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.008205269031240796,
+   "tau_0.02": {
+    "accuracy": 0.771942456654103,
+    "completeness": 0.21481433550557905,
+    "f1": 0.3360996492595935
+   },
+   "tau_0.05": {
+    "accuracy": 0.9060650064427201,
+    "completeness": 0.30631954604378564,
+    "f1": 0.4578504747366994
+   },
+   "tau_0.1": {
+    "accuracy": 0.9507711822022705,
+    "completeness": 0.36941739799913575,
+    "f1": 0.5320927956643006
+   },
+   "tau_0.2": {
+    "accuracy": 0.9887758563588508,
+    "completeness": 0.439408163578656,
+    "f1": 0.6084316547003055
+   }
+  },
+  "mesh": {
+   "points": 752274,
+   "points_in_scan_box": 733205,
+   "gt_points": 911806,
+   "median_dist_to_gt_m": 0.00861107026196827,
+   "tau_0.02": {
+    "accuracy": 0.7257724647267817,
+    "completeness": 0.2019300158147676,
+    "f1": 0.31595311719906105
+   },
+   "tau_0.05": {
+    "accuracy": 0.867725942949107,
+    "completeness": 0.27997731973687384,
+    "f1": 0.42335609154665865
+   },
+   "tau_0.1": {
+    "accuracy": 0.9450862991932679,
+    "completeness": 0.32989802655389416,
+    "f1": 0.48907598114082346
+   },
+   "tau_0.2": {
+    "accuracy": 0.9852401442979795,
+    "completeness": 0.37970248057152506,
+    "f1": 0.5481521639553982
+   }
+  }
+ },
+ "terrace_ours": {
+  "scene": "terrace",
+  "poses": "ours",
+  "views": 23,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.01165867251584941,
+  "fused_points": 2579162,
+  "mesh_vertices": 139343,
+  "mesh_triangles": 216963,
+  "kept_fraction": 0.4189515865894445,
+  "seconds": {
+   "plane_sweep": 175.66869633298484,
+   "fusion": 5.409964959020726,
+   "poisson": 7.62508237498696,
+   "per_view_sweep": 7.63776940578195
+  },
+  "cloud": {
+   "points": 2579162,
+   "points_in_scan_box": 2574534,
+   "gt_points": 4904108,
+   "median_dist_to_gt_m": 0.021722866987699065,
+   "tau_0.02": {
+    "accuracy": 0.4698120125816944,
+    "completeness": 0.5183081204573798,
+    "f1": 0.4928699923572707
+   },
+   "tau_0.05": {
+    "accuracy": 0.7567711282896245,
+    "completeness": 0.7534399731816673,
+    "f1": 0.7551018768802682
+   },
+   "tau_0.1": {
+    "accuracy": 0.8692000183334149,
+    "completeness": 0.8566279535442531,
+    "f1": 0.8628681943490469
+   },
+   "tau_0.2": {
+    "accuracy": 0.9251091653868234,
+    "completeness": 0.922629966550492,
+    "f1": 0.9238679027395893
+   }
+  },
+  "mesh": {
+   "points": 2579162,
+   "points_in_scan_box": 2573403,
+   "gt_points": 4904108,
+   "median_dist_to_gt_m": 0.02477721722515468,
+   "tau_0.02": {
+    "accuracy": 0.4307424837850892,
+    "completeness": 0.43913001100302035,
+    "f1": 0.4348958100809698
+   },
+   "tau_0.05": {
+    "accuracy": 0.7071410890560087,
+    "completeness": 0.6788315020794812,
+    "f1": 0.6926971727092167
+   },
+   "tau_0.1": {
+    "accuracy": 0.8374580273668757,
+    "completeness": 0.7862153525167064,
+    "f1": 0.8110280877443502
+   },
+   "tau_0.2": {
+    "accuracy": 0.923186146903536,
+    "completeness": 0.8598735998473117,
+    "f1": 0.8904058284234667
+   }
+  }
+ },
+ "relief_ours": {
+  "scene": "relief",
+  "poses": "ours",
+  "views": 31,
+  "image_size": [
+   800,
+   533
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.007915282931400622,
+  "fused_points": 2781314,
+  "mesh_vertices": 234500,
+  "mesh_triangles": 388688,
+  "kept_fraction": 0.501327921684924,
+  "seconds": {
+   "plane_sweep": 237.42772320800577,
+   "fusion": 7.862368583999341,
+   "poisson": 8.514582040981622,
+   "per_view_sweep": 7.658958813161477
+  },
+  "cloud": {
+   "points": 2781314,
+   "points_in_scan_box": 2776446,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.010598474310907022,
+   "tau_0.02": {
+    "accuracy": 0.7545257498254964,
+    "completeness": 0.3909078534340529,
+    "f1": 0.5150015511779427
+   },
+   "tau_0.05": {
+    "accuracy": 0.9326952514113367,
+    "completeness": 0.5726974838703329,
+    "f1": 0.7096516559197243
+   },
+   "tau_0.1": {
+    "accuracy": 0.9697843934295859,
+    "completeness": 0.7085542586585234,
+    "f1": 0.8188393457901872
+   },
+   "tau_0.2": {
+    "accuracy": 0.9877699764375032,
+    "completeness": 0.8276846014570002,
+    "f1": 0.9006691869174093
+   }
+  },
+  "mesh": {
+   "points": 2781314,
+   "points_in_scan_box": 2769431,
+   "gt_points": 4877968,
+   "median_dist_to_gt_m": 0.013579094518896051,
+   "tau_0.02": {
+    "accuracy": 0.614644668886858,
+    "completeness": 0.3520490499322669,
+    "f1": 0.44768072351163846
+   },
+   "tau_0.05": {
+    "accuracy": 0.8165998719592581,
+    "completeness": 0.5001984432862209,
+    "f1": 0.6203865542850459
+   },
+   "tau_0.1": {
+    "accuracy": 0.9112590275764227,
+    "completeness": 0.6259401455688106,
+    "f1": 0.742120628656087
+   },
+   "tau_0.2": {
+    "accuracy": 0.9667419047450542,
+    "completeness": 0.7516558124202537,
+    "f1": 0.8457380553444294
+   }
+  }
+ },
+ "templeRing_ours": {
+  "scene": "templeRing",
+  "poses": "ours",
+  "views": 47,
+  "image_size": [
+   640,
+   480
+  ],
+  "device": "mps",
+  "mvs": {
+   "n_depths": 192,
+   "n_sources": 5,
+   "top_k": 2,
+   "window": 7,
+   "depth_chunk": 16,
+   "min_angle": 5.0,
+   "max_angle": 40.0
+  },
+  "fusion": {
+   "min_conf": 0.5,
+   "max_px": 1.0,
+   "max_rel_depth": 0.01,
+   "min_views": 2
+  },
+  "voxel_m": 0.00034786774528180255,
+  "fused_points": 1577005,
+  "mesh_vertices": 1500214,
+  "mesh_triangles": 2921536,
+  "kept_fraction": 0.2546651291001773,
+  "seconds": {
+   "plane_sweep": 261.66272529098205,
+   "fusion": 5.625870375020895,
+   "poisson": 15.836601499991957,
+   "per_view_sweep": 5.567292027467703
+  }
+ }
+}
