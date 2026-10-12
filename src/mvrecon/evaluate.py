@@ -35,6 +35,17 @@ def align_and_compare(
     C_est = np.array([g.camera_center(R_est[i], t_est[i]) for i in ids])
     C_gt = np.array([g.camera_center(R_gt[i], t_gt[i]) for i in ids])
     s, Rs, ts = g.umeyama(C_est, C_gt, with_scale=True)
+    # Least squares lets one badly registered camera tilt the whole alignment (on relief a
+    # single 54 cm outlier added ~0.5 deg to EVERY camera's rotation error). Refit on the
+    # cameras within 3x the median error; all cameras are still scored.
+    used = np.ones(len(ids), bool)
+    for _ in range(3):
+        pos = np.linalg.norm(s * C_est @ Rs.T + ts - C_gt, axis=1)
+        keep = pos <= max(3 * np.median(pos), 1e-9)
+        if keep.sum() < 3 or (keep == used).all():
+            break
+        used = keep
+        s, Rs, ts = g.umeyama(C_est[used], C_gt[used], with_scale=True)
     C_al = s * C_est @ Rs.T + ts
     pos = np.linalg.norm(C_al - C_gt, axis=1)
     # world_est -> world_gt is X' = s Rs X + ts, so camera rotations become R_est Rs^T.
@@ -42,6 +53,7 @@ def align_and_compare(
     extent = float(np.linalg.norm(C_gt.max(0) - C_gt.min(0)))
     return {
         "registered": len(ids),
+        "alignment_inliers": int(used.sum()),
         "rot_err_median_deg": float(np.median(rot)),
         "rot_err_max_deg": float(rot.max()),
         "pos_err_median_m": float(np.median(pos)),

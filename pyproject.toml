@@ -28,6 +28,7 @@ mv3d-twoview = "mvrecon.twoview:main"
 mv3d-sfm = "mvrecon.run_sfm:main"
 mv3d-dense = "mvrecon.dense:main"
 mv3d-render = "mvrecon.render:main"
+mv3d-plots = "mvrecon.plots:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

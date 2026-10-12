@@ -113,6 +113,11 @@ def main(argv: list[str] | None = None) -> None:
                              "middlebury/templeRing"])
     ap.add_argument("--engines", nargs="+", default=["ours", "colmap"])
     ap.add_argument("--out", type=Path, default=Path("reports/sfm"))
+    ap.add_argument("--pnp-min-inliers", type=int, default=SfMConfig.pnp_min_inliers)
+    ap.add_argument("--min-tri-angle", type=float, default=SfMConfig.min_tri_angle)
+    ap.add_argument("--suffix", default="", help="result key suffix, e.g. _relaxed")
+    ap.add_argument("--eval-only", action="store_true",
+                    help="re-score saved reconstructions (models/sfm) without re-running SfM")
     args = ap.parse_args(argv)
     args.out.mkdir(parents=True, exist_ok=True)
     res_path = args.out / "results.json"
@@ -122,9 +127,22 @@ def main(argv: list[str] | None = None) -> None:
         recs = {}
         for engine in args.engines:
             t0 = time.perf_counter()
+            key = engine + args.suffix
+            if args.eval_only:
+                rec = load_reconstruction(Path("models/sfm") / f"{scene.name}_{key}.npz")
+                m = align_and_compare(rec.R, rec.t, scene.R_gt, scene.t_gt)
+                recs[engine] = (rec, m)
+                results[scene.name][key]["poses"] = m
+                print(f"{scene.name:12s} {key:6s}: rot {m['rot_err_median_deg']:.3f} deg, "
+                      f"pos {m['pos_err_median_m'] * 100:.2f} cm "
+                      f"(max {m['pos_err_max_m'] * 100:.1f}), "
+                      f"aligned on {m['alignment_inliers']}/{m['registered']}")
+                res_path.write_text(json.dumps(results, indent=1, default=float))
+                continue
             if engine == "ours":
                 feats = extract_scene(scene, cache_dir="outputs/cache")
-                cfg = SfMConfig()
+                cfg = SfMConfig(pnp_min_inliers=args.pnp_min_inliers,
+                                min_tri_angle=args.min_tri_angle)
                 pairs = cached_pair_matches(scene, feats, cfg)
                 rec = IncrementalSfM(feats, scene.K, cfg).run(pairs, verbose=False)
             else:
@@ -132,24 +150,24 @@ def main(argv: list[str] | None = None) -> None:
 
                 rec = run_colmap(scene, Path("outputs/colmap") / scene.name)
             rec.log["wall_seconds"] = time.perf_counter() - t0
-            save_reconstruction(rec, Path("models/sfm") / f"{scene.name}_{engine}.npz")
-            write_ply(Path("models/sfm") / f"{scene.name}_{engine}_sparse.ply", rec.X, rec.colors)
+            save_reconstruction(rec, Path("models/sfm") / f"{scene.name}_{key}.npz")
+            write_ply(Path("models/sfm") / f"{scene.name}_{key}_sparse.ply", rec.X, rec.colors)
             if scene.R_gt is None:  # your own photos: nothing to compare with
-                results.setdefault(scene.name, {})[engine] = {"log": rec.log}
+                results.setdefault(scene.name, {})[key] = {"log": rec.log}
                 print(f"{scene.name}: {engine} registered {rec.log['registered']}/{len(scene)}, "
                       f"{rec.log['points']} points")
                 res_path.write_text(json.dumps(results, indent=1, default=float))
                 continue
             m = align_and_compare(rec.R, rec.t, scene.R_gt, scene.t_gt)
             recs[engine] = (rec, m)
-            results.setdefault(scene.name, {})[engine] = {"log": rec.log, "poses": m}
-            print(f"{scene.name:12s} {engine:6s}: {m['registered']}/{len(scene)} registered, "
+            results.setdefault(scene.name, {})[key] = {"log": rec.log, "poses": m}
+            print(f"{scene.name:12s} {key:6s}: {m['registered']}/{len(scene)} registered, "
                   f"{rec.log['points']} pts, rot {m['rot_err_median_deg']:.3f} deg, "
                   f"pos {m['pos_err_median_m'] * 100:.2f} cm (max {m['pos_err_max_m'] * 100:.1f}), "
                   f"reproj {rec.log['mean_reproj_px']:.2f} px, {rec.log['wall_seconds']:.0f} s")
             res_path.write_text(json.dumps(results, indent=1, default=float))
         if recs:
-            plot_scene(scene, recs, args.out / f"sfm_{scene.name}.png")
+            plot_scene(scene, recs, args.out / f"sfm_{scene.name}{args.suffix}.png")
 
 
 if __name__ == "__main__":

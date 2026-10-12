@@ -75,3 +75,14 @@ def test_align_and_compare_is_zero_for_a_similarity_copy():
     m = align_and_compare(R_est, t_est, [c[0] for c in cams], [c[1] for c in cams])
     assert m["rot_err_max_deg"] < 1e-4
     assert m["pos_err_max_m"] < 1e-9
+
+
+def test_alignment_is_robust_to_one_bad_camera():
+    K, cams, X, obs = make_scene(n_views=8)
+    R_est = {i: c[0] for i, c in enumerate(cams)}
+    t_est = {i: c[1].copy() for i, c in enumerate(cams)}
+    t_est[3] = t_est[3] + np.array([0.0, 2.0, 0.0])  # one camera 2 m off
+    m = align_and_compare(R_est, t_est, [c[0] for c in cams], [c[1] for c in cams])
+    assert m["alignment_inliers"] == 7
+    assert m["rot_err_median_deg"] < 1e-6  # the other cameras are not tilted by the outlier
+    assert m["pos_err_max_m"] > 1.5
