@@ -32,14 +32,55 @@ def find_blender() -> str:
 
 
 def view_frame(R: dict, t: dict, center: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """(up, front) from world-to-camera rotations: camera y axis in world = R[1]."""
-    up = -np.mean([R[i][1] for i in R], axis=0)
-    C = np.mean([-R[i].T @ t[i] for i in R], axis=0)
-    front = C - center
-    return up / np.linalg.norm(up), front / np.linalg.norm(front)
+    """(up, front) for the render, from the cameras that took the photos.
+
+    * People hold the camera at roughly constant height, so when the camera centres lie close to
+      a plane, "up" is that plane's normal. Its sign comes from the mean image y axis (rows point
+      down) when that axis is informative; for the Middlebury temple it is not (the camera was
+      rolled by 90 degrees), and the normal points to the side the cameras are on instead.
+    * Otherwise (e.g. cameras along a line) "up" is minus the mean camera y axis.
+    * "front": from the object to the mean camera centre, or, when the cameras surround the
+      object (a ring), any direction in the camera plane.
+    """
+    C = np.array([-R[i].T @ t[i] for i in R])
+    mean_c = C.mean(0)
+    y_up = -np.mean([R[i][1] for i in R], axis=0)
+    up, front = y_up, mean_c - center
+    if len(C) >= 4:
+        _, sv, Vt = np.linalg.svd(C - mean_c, full_matrices=False)
+        n = Vt[2]
+        if sv[2] < 0.15 * sv[1] and sv[1] > 0.2 * sv[0]:  # planar, not a line
+            cos_y = n @ y_up / (np.linalg.norm(y_up) + 1e-12)
+            if abs(cos_y) > 0.3:
+                up = n if cos_y > 0 else -n
+            else:
+                up = n if n @ (mean_c - center) >= 0 else -n
+        d = mean_c - center
+        in_plane = np.linalg.norm(d - (d @ n) * n)
+        if in_plane < 0.3 * sv[0] / np.sqrt(len(C)):  # object inside the ring of cameras
+            front = Vt[0]
+    up = up / np.linalg.norm(up)
+    front = front - (front @ up) * up
+    return up, front / np.linalg.norm(front)
 
 
-def encode(frames: Path, mp4: Path, gif: Path | None, fps: int = 24, gif_width: int = 640):
+def drop_dark_vertices(mesh_path: Path, out: Path, min_brightness: float) -> Path:
+    """Visual clean-up only: remove vertices darker than `min_brightness` (0-1 mean RGB).
+
+    Used for the temple, which stood on black cloth that MVS reconstructs as dark noise.
+    The evaluated meshes and clouds are never filtered this way.
+    """
+    import open3d as o3d
+
+    mesh = o3d.io.read_triangle_mesh(str(mesh_path))
+    col = np.asarray(mesh.vertex_colors)
+    mesh.remove_vertices_by_mask(col.mean(1) < min_brightness)
+    mesh.remove_unreferenced_vertices()
+    o3d.io.write_triangle_mesh(str(out), mesh)
+    return out
+
+
+def encode(frames: Path, mp4: Path, gif: Path | None, fps: int = 24, gif_width: int = 480):
     pattern = str(frames / "frame_%04d.png")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", pattern,
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", str(mp4)], check=True)
@@ -61,6 +102,8 @@ def main(argv: list[str] | None = None) -> None:
     ap.add_argument("--frames", type=int, default=120)
     ap.add_argument("--res", type=int, nargs=2, default=[960, 720])
     ap.add_argument("--gif", type=Path, default=None, help="also write a GIF here")
+    ap.add_argument("--min-brightness", type=float, default=0.0,
+                    help="render only: hide vertices darker than this (0-1), e.g. a black backdrop")
     args = ap.parse_args(argv)
 
     import open3d as o3d
@@ -71,15 +114,17 @@ def main(argv: list[str] | None = None) -> None:
     scene = load_scene(args.scene)
     tag = f"{scene.name}_{args.poses}"
     mesh_path = args.mesh or Path("models/dense") / f"{tag}_mesh.ply"
+    out = Path("outputs/render") / tag
+    frames = out / "frames"
+    shutil.rmtree(frames, ignore_errors=True)
+    frames.mkdir(parents=True)
+    if args.min_brightness > 0:
+        mesh_path = drop_dark_vertices(mesh_path, out / "mesh_render.ply", args.min_brightness)
     V = np.asarray(o3d.io.read_triangle_mesh(str(mesh_path)).vertices)
     center = np.median(V, axis=0)
     radius = float(np.percentile(np.linalg.norm(V - center, axis=1), 90))
     R, t, _ = get_cameras(scene, args.poses)
     up, front = view_frame(R, t, center)
-    out = Path("outputs/render") / tag
-    frames = out / "frames"
-    shutil.rmtree(frames, ignore_errors=True)
-    frames.mkdir(parents=True)
     script = Path(__file__).with_name("blender_turntable.py")
     cmd = [find_blender(), "--background", "--python", str(script), "--",
            "--mesh", str(mesh_path.resolve()), "--out", str(frames.resolve()),

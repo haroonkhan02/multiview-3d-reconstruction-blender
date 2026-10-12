@@ -72,3 +72,17 @@ def test_view_frame_up_and_front():
     up, front = view_frame({0: R}, {0: t}, np.zeros(3))
     assert np.allclose(up, [0, 0, 1])
     assert np.allclose(front, [0, -1, 0])
+
+
+def test_view_frame_on_a_camera_ring_uses_the_ring_normal():
+    from tests.conftest import look_at
+
+    R, t = {}, {}
+    for k in range(12):  # ring at height 1 around the origin, cameras rolled by 90 degrees
+        a = 2 * np.pi * k / 12
+        Rk, tk = look_at(np.array([3 * np.cos(a), 3 * np.sin(a), 1.0]), np.zeros(3))
+        roll = np.array([[0.0, -1, 0], [1, 0, 0], [0, 0, 1]])
+        R[k], t[k] = roll @ Rk, roll @ tk
+    up, front = view_frame(R, t, np.zeros(3))
+    assert np.allclose(up, [0, 0, 1], atol=1e-6)
+    assert abs(front @ up) < 1e-6

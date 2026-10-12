@@ -12,6 +12,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+import matplotlib.ticker  # noqa: E402
 import numpy as np  # noqa: E402
 
 ETH3D = ["pipes", "meadow", "terrace", "relief"]
@@ -54,6 +55,7 @@ def dense_figure(res: dict, path: Path) -> None:
     for a, title in zip(ax, ("accuracy", "completeness", "F1"), strict=True):
         a.set_xscale("log")
         a.set_xticks(taus, [f"{t:g}" for t in taus])
+        a.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
         a.set_xlabel("distance threshold tau [cm]")
         a.set_title(title)
         a.set_ylim(0, 1)
