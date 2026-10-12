@@ -139,7 +139,7 @@ uv venv --python 3.12 && source .venv/bin/activate
 uv pip install -e ".[full,dev]"        # torch, open3d, pycolmap, py7zr + pytest/ruff
 pytest -q                              # 32 tests, synthetic data only
 
-mv3d-download eth3d --scenes pipes meadow terrace relief   # ~2.1 GB, CC BY-NC-SA 4.0
+mv3d-download eth3d --scenes pipes meadow terrace relief   # ~1.5 GB (2.1 GB extracted)
 mv3d-download temple                                       # 11 MB
 mv3d-twoview                                               # §1, ~2 min
 mv3d-sfm                                                   # §2, ~35 min (my SfM is the slow part)

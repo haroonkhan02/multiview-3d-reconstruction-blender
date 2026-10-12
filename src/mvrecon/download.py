@@ -1,7 +1,7 @@
 """Download the public multi-view datasets used by the project.
 
 * **ETH3D high-resolution multi-view (training scenes)**: undistorted DSLR images
-  (6048 x 4032 JPEG) with ground-truth intrinsics and poses in COLMAP text format, plus the
+  (about 6200 x 4140 JPEG) with ground-truth intrinsics and poses in COLMAP text format, plus the
   laser-scan point cloud used for evaluation. CC BY-NC-SA 4.0, no account needed.
   https://www.eth3d.net/datasets
 * **Middlebury multi-view "templeRing"** (Seitz et al. 2006): 47 calibrated 640 x 480 views
