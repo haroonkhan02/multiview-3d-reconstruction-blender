@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiview-3d-reconstruction-blender"
+version = "1.0.0"
+description = "Photos to 3D: two-view Structure-from-Motion from scratch, incremental SfM with bundle adjustment vs COLMAP, plane-sweep multi-view stereo on the Apple GPU, Poisson meshing and an automated Blender turntable, evaluated against ETH3D laser scans."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Muhammad Haroon Khan" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "opencv-python>=4.9",
+    "matplotlib>=3.8",
+    "pyyaml>=6",
+    "tqdm>=4.66",
+    "pillow>=10",
+]
+
+[project.optional-dependencies]
+full = ["torch>=2.2", "open3d>=0.19", "pycolmap>=3.11", "py7zr>=0.21"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+mv3d-download = "mvrecon.download:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["data", "models", "outputs"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]

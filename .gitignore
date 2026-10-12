@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Data, models, generated media (download / regenerate with the CLIs)
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+outputs/
+
+# Large generated geometry: keep reports small (meshes live in models/)
+*.ply
+*.obj
+*.blend
+*.blend1
+*.mp4
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+.env
