@@ -15,9 +15,7 @@ dependencies = [
     "scipy>=1.11",
     "opencv-python>=4.9",
     "matplotlib>=3.8",
-    "pyyaml>=6",
     "tqdm>=4.66",
-    "pillow>=10",
 ]
 
 [project.optional-dependencies]
@@ -26,6 +24,10 @@ dev = ["pytest>=8", "ruff>=0.6"]
 
 [project.scripts]
 mv3d-download = "mvrecon.download:main"
+mv3d-twoview = "mvrecon.twoview:main"
+mv3d-sfm = "mvrecon.run_sfm:main"
+mv3d-dense = "mvrecon.dense:main"
+mv3d-render = "mvrecon.render:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
