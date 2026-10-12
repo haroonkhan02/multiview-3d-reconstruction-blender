@@ -63,7 +63,9 @@ def scale_K(K: np.ndarray, s: float) -> np.ndarray:
 
 
 def qvec_to_rotmat(q: np.ndarray) -> np.ndarray:
-    w, x, y, z = q
+    # Normalise first: files store ~7 decimals, and an unnormalised quaternion gives a
+    # scaled (non-orthonormal) matrix whose trace can exceed 3.
+    w, x, y, z = np.asarray(q, float) / np.linalg.norm(q)
     return np.array(
         [
             [1 - 2 * y * y - 2 * z * z, 2 * x * y - 2 * w * z, 2 * x * z + 2 * w * y],

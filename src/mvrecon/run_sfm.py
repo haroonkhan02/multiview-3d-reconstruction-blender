@@ -134,6 +134,12 @@ def main(argv: list[str] | None = None) -> None:
             rec.log["wall_seconds"] = time.perf_counter() - t0
             save_reconstruction(rec, Path("models/sfm") / f"{scene.name}_{engine}.npz")
             write_ply(Path("models/sfm") / f"{scene.name}_{engine}_sparse.ply", rec.X, rec.colors)
+            if scene.R_gt is None:  # your own photos: nothing to compare with
+                results.setdefault(scene.name, {})[engine] = {"log": rec.log}
+                print(f"{scene.name}: {engine} registered {rec.log['registered']}/{len(scene)}, "
+                      f"{rec.log['points']} points")
+                res_path.write_text(json.dumps(results, indent=1, default=float))
+                continue
             m = align_and_compare(rec.R, rec.t, scene.R_gt, scene.t_gt)
             recs[engine] = (rec, m)
             results.setdefault(scene.name, {})[engine] = {"log": rec.log, "poses": m}
@@ -142,7 +148,8 @@ def main(argv: list[str] | None = None) -> None:
                   f"pos {m['pos_err_median_m'] * 100:.2f} cm (max {m['pos_err_max_m'] * 100:.1f}), "
                   f"reproj {rec.log['mean_reproj_px']:.2f} px, {rec.log['wall_seconds']:.0f} s")
             res_path.write_text(json.dumps(results, indent=1, default=float))
-        plot_scene(scene, recs, args.out / f"sfm_{scene.name}.png")
+        if recs:
+            plot_scene(scene, recs, args.out / f"sfm_{scene.name}.png")
 
 
 if __name__ == "__main__":

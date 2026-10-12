@@ -177,7 +177,8 @@ def main(argv: list[str] | None = None) -> None:
         "seconds": {"plane_sweep": t_mvs, "fusion": t_fuse, "poisson": t_mesh,
                     "per_view_sweep": t_mvs / max(len(depths), 1)},
     }
-    gallery_views = views[:: max(1, len(views) // 3)][:3]
+    figures = not args.tag  # ablation runs only add numbers
+    gallery_views = views[:: max(1, len(views) // 3)][:3] if figures else []
     keep_masks = {}
     from mvrecon.fusion import consistency_counts
 
@@ -186,8 +187,9 @@ def main(argv: list[str] | None = None) -> None:
         m = np.zeros_like(valid)
         m[valid] = count >= fcfg.min_views
         keep_masks[r] = m
-    depth_gallery(scene, gallery_views, imgs, depths, confs, keep_masks,
-                  args.out / f"depth_{tag}.jpg", fcfg)
+    if figures:
+        depth_gallery(scene, gallery_views, imgs, depths, confs, keep_masks,
+                      args.out / f"depth_{tag}.jpg", fcfg)
     if scene.scan_paths:
         from scipy.spatial import cKDTree
 
@@ -197,9 +199,10 @@ def main(argv: list[str] | None = None) -> None:
         result["mesh"] = cloud_metrics(mesh_pts, gt)
         dist = cKDTree(gt).query(pts, workers=-1)[0]
         c = result["cloud"]["tau_0.05"]
-        error_figure(pts, dist, args.out / f"error_{tag}.png",
-                     f"{scene.name}, {args.poses} cameras: fused cloud coloured by error "
-                     f"(acc@5cm {c['accuracy']:.2f}, comp@5cm {c['completeness']:.2f})")
+        if figures:
+            error_figure(pts, dist, args.out / f"error_{tag}.png",
+                         f"{scene.name}, {args.poses} cameras: fused cloud coloured by error "
+                         f"(acc@5cm {c['accuracy']:.2f}, comp@5cm {c['completeness']:.2f})")
     res_path = args.out / "results.json"
     allres = json.loads(res_path.read_text()) if res_path.exists() else {}
     if args.reuse and tag in allres:  # keep the timing of the run that did the sweep

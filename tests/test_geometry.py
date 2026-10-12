@@ -35,8 +35,8 @@ def test_recover_pose_matches_ground_truth(scene):
     x1n, x2n = g.normalize_points(obs[0], K), g.normalize_points(obs[3], K)
     E = g.eight_point_essential(x1n, x2n)
     R, t, front = g.recover_pose(E, x1n, x2n)
-    assert g.rotation_error_deg(R, R_gt) < 1e-3  # arccos near 0 limits precision
-    assert g.direction_error_deg(t, t_gt) < 1e-3
+    assert g.rotation_error_deg(R, R_gt) < 1e-6
+    assert g.direction_error_deg(t, t_gt) < 1e-3  # arccos near 0 limits precision
     assert front.all()
 
 
@@ -102,3 +102,18 @@ def test_rotation_and_direction_errors():
     R = Rotation.from_euler("z", 10, degrees=True).as_matrix()
     assert np.isclose(g.rotation_error_deg(R, np.eye(3)), 10)
     assert np.isclose(g.direction_error_deg(np.array([1, 0, 0]), np.array([0, 2, 0])), 90)
+
+
+def test_small_rotation_errors_are_not_rounded_to_zero():
+    from scipy.spatial.transform import Rotation
+
+    R = Rotation.from_euler("x", 0.01, degrees=True).as_matrix()
+    assert np.isclose(g.rotation_angle_deg(R), 0.01, rtol=1e-6)
+    assert np.isclose(g.rotation_angle_deg(R * (1 + 1e-6)), 0.01, rtol=1e-3)  # trace > 3
+
+
+def test_qvec_is_normalised_before_conversion():
+    from mvrecon.datasets import qvec_to_rotmat
+
+    R = qvec_to_rotmat(np.array([0.9, 0.1, -0.2, 0.3]))  # not unit length
+    assert np.allclose(R @ R.T, np.eye(3))

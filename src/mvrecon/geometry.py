@@ -270,8 +270,14 @@ def reprojection_error(K, R, t, X, x) -> np.ndarray:
 
 # ----------------------------------------------------------------------------- comparisons
 def rotation_angle_deg(R: np.ndarray) -> float:
-    """Angle of a rotation matrix (geodesic distance to identity), degrees."""
-    return float(np.degrees(np.arccos(np.clip((np.trace(R) - 1) / 2, -1, 1))))
+    """Angle of a rotation matrix (geodesic distance to identity), degrees.
+
+    atan2(sin, cos) instead of arccos((trace - 1) / 2): arccos is flat near 0 degrees, so tiny
+    errors (or a slightly non-orthonormal matrix with trace > 3) collapse to exactly 0.
+    """
+    sin = np.linalg.norm([R[2, 1] - R[1, 2], R[0, 2] - R[2, 0], R[1, 0] - R[0, 1]]) / 2
+    cos = (np.trace(R) - 1) / 2
+    return float(np.degrees(np.arctan2(sin, cos)))
 
 
 def rotation_error_deg(R_est: np.ndarray, R_gt: np.ndarray) -> float:
